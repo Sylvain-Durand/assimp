@@ -1136,9 +1136,9 @@ ADD_LIBRARY( assimp ${assimp_src} )
 ADD_LIBRARY(assimp::assimp ALIAS assimp)
 
 # enable warnings as errors ########################################
-IF (MSVC)
+IF(MSVC AND NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   TARGET_COMPILE_OPTIONS(assimp PRIVATE /WX)
-ELSE()
+ELSEIF(NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   TARGET_COMPILE_OPTIONS(assimp PRIVATE -Werror)
 ENDIF()
 

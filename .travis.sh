@@ -6,7 +6,7 @@
 # License see LICENSE file
 #
 function generate() {
-    OPTIONS="-DASSIMP_WERROR=ON"
+    OPTIONS="-DASSIMP_WERROR=OFF"
     OPTIONS="$OPTIONS -DASSIMP_NO_EXPORT=NO"
     
     if [ "$DISABLE_EXPORTERS" = "YES" ] ; then
