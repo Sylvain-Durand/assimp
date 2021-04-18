@@ -57,7 +57,7 @@ PROJECT( Assimp VERSION 5.0.1 )
 
 OPTION( BUILD_SHARED_LIBS
   "Build package with shared libraries."
-  ON
+  OFF
 )
 
 OPTION( ASSIMP_BUILD_FRAMEWORK
