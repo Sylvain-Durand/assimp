@@ -588,20 +588,6 @@ IF ( ASSIMP_BUILD_ASSIMP_TOOLS )
   ADD_SUBDIRECTORY( tools/assimp_cmd/ )
 ENDIF ()
 
-IF ( ASSIMP_BUILD_SAMPLES)
-  SET( SAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/samples )
-  SET( SAMPLES_SHARED_CODE_DIR ${SAMPLES_DIR}/SharedCode )
-  IF ( WIN32 )
-    ADD_SUBDIRECTORY( samples/SimpleTexturedOpenGL/ )
-    ADD_SUBDIRECTORY( samples/SimpleTexturedDirectx11 )
-  ENDIF ()
-  ADD_SUBDIRECTORY( samples/SimpleOpenGL/ )
-ENDIF ()
-
-IF ( ASSIMP_BUILD_TESTS )
-  ADD_SUBDIRECTORY( test/ )
-ENDIF ()
-
 # Generate a pkg-config .pc for the Assimp library.
 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/assimp.pc.in" "${PROJECT_BINARY_DIR}/assimp.pc" @ONLY )
 IF ( ASSIMP_INSTALL )
